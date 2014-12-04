@@ -14,7 +14,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="f1_label">password :</td><td><input type="password" name="password" value=""  />
+                <td class="f1_label">password :</td><td><input type="password" name="password" value="" />
                 </td>
             </tr>
             <tr>
@@ -29,9 +29,10 @@
 </div>
 <body>
     <div class="container">
-        <div class="row" id="bottom"></div>
+        <div class="row" id="bottom">
         <% @products.each do |product| %>
           <li>
+            <img src= <%= product.image_url %>>
             <strong><%= product.name %></strong>
             <%= simple_format(product.description) %>
             <em><%= product.price %></em>
@@ -40,6 +41,7 @@
           </li>
         <% end %>
       </ul>
+    </div>
 
   <footer><div id='footer'>www.shoppingcart.com</div></footer>
 
