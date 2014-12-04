@@ -1,13 +1,48 @@
-<h1>Shopping_Cart</h1>
+<html>
+  <head>
+  <div id="header"><h1>Shopping Cart</h1></div>
 
-<ul id="products">
-  <% @products.each do |product| %>
-    <li>
-      <strong><%= product.name %></strong>
-      <%= simple_format(product.description) %>
-      <em><%= product.price %></em>
-      <br />
-      <%= link_to "Details", product_path(product) %>
-    </li>
-  <% end %>
-</ul>
+<body>
+ <div class="container">
+        <div class="row" id="top">
+          <div class="quarter">
+            <div id="login_form">
+             <form name="f1" method="post" action="login.php" id="f1">
+            <table>
+            <tr>
+                <td class="f1_label"> user name :</td><td><input type="text" name="username" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="f1_label">password :</td><td><input type="password" name="password" value=""  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="login" value="Log In"/>
+                </td>
+            </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+</div>
+<body>
+    <div class="container">
+        <div class="row" id="bottom"></div>
+        <% @products.each do |product| %>
+          <li>
+            <strong><%= product.name %></strong>
+            <%= simple_format(product.description) %>
+            <em><%= product.price %></em>
+            <br />
+            <%= link_to "Details", product_path(product) %>
+          </li>
+        <% end %>
+      </ul>
+
+  <footer><div id='footer'>www.shoppingcart.com</div></footer>
+
+</body>
+
+</html>
